@@ -1,16 +1,18 @@
+@import url('reset.css');
 :root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+  --content-max-width: 1995px;
 
-  /* --class-property-value */
+  --min-column-width: 180px;
+  --shelf-min-height: 260px;
+  --encore-text-size-larger: 1.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-  }
+body {
+  background-color: black;
+  color: white;
+}
+
+/* @media (prefers-color-scheme: dark) {
 }
 
 * {
@@ -34,4 +36,4 @@ a {
   html {
     color-scheme: dark;
   }
-}
+} */
