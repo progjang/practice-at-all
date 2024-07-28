@@ -1,24 +1,5 @@
 .container {
-  padding: 0 1rem;
-  width: 100%;
-}
-
-.main-view-container__scroll-node-child-spacer {
-  height: 2rem;
-  position: sticky;
-  top: 0;
-  background-color: #121212;
-}
-
-.main {
-  width: 100%;
-  display: block;
-  unicode-bidi: isolate;
-  background-color: #121212;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  margin-bottom: 2rem;
 }
 
 .section-title {
@@ -27,4 +8,15 @@
   clear: both;
   margin-bottom: 1rem;
   position: relative;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.container a {
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.container a:hover {
+  text-decoration: underline;
 }

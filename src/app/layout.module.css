@@ -1,0 +1,19 @@
+.container {
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.main {
+  width: 100%;
+  display: block;
+  unicode-bidi: isolate;
+  background-color: #121212;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.footer {
+  padding: 2rem 0 1rem 0;
+}

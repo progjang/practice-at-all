@@ -1,0 +1,47 @@
+.list-container {
+  padding: 12px;
+}
+.list-link {
+  position: relative;
+  color: white;
+}
+
+.list-content {
+  border-radius: 8px;
+  height: 100%;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  width: 100%;
+}
+
+.list-emoji {
+  right: 0rem;
+  transform: rotate(25deg) translate(18%, -2%);
+  border-radius: 4px;
+  bottom: 0rem;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  position: absolute;
+  font-size: 360%;
+  object-fit: cover;
+  object-position: center center;
+  user-select: none;
+  background-color: whitesmoke;
+  padding: 1rem;
+}
+
+.list-name {
+  hyphens: auto;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  padding: 16px;
+  position: absolute;
+  padding-inline-end: 30%;
+  font-size: var(--encore-text-size-larger);
+  font-weight: 700;
+  text-wrap: balance;
+  box-sizing: border-box;
+  margin-block-start: 0;
+  color: inherit;
+  margin-block-end: 0;
+}
