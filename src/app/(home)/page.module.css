@@ -29,7 +29,6 @@
 
 .grid-container {
   display: grid;
-  /* grid-gap: var(--grid-gap); */
   grid-auto-rows: min-content;
   grid-template-columns: repeat(
     auto-fill,

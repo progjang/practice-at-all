@@ -70,7 +70,7 @@ export const EMOJI: Emoji = {
     backgroundColor: '#556B2F',
   },
   manga: {
-    emoji: '🈲',
+    emoji: '✨',
     backgroundColor: '#FF4500',
   },
   'combined-print-fiction': {
