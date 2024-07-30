@@ -1,0 +1,50 @@
+배포 링크: https://practice-at-all.vercel.app/
+깃허브 링크: https://github.com/ha-il/practice-at-all?tab=readme-ov-file
+
+스타일링 레퍼런스
+- Spotify: https://open.spotify.com/
+- Magazine World  :https://magazineworld.jp/magazines/
+
+## 과제에 중점을 둔 부분
+1. 이번 챌린지는 특별한 기능을 추가하지 않는다면, 구현 자체는 어렵지 않다보니 코딩보다도 스타일링에 좀 더 초점을 맞춰서 작업했던 것 같습니다. 이번 챌린지를 *카테고리 페이지*와, *카테고리의 책 목록 페이지*를 구현하는 것으로 이해하고 작업했습니다.
+
+2.  카테고리 페이지: 비슷한 UI를 온라인 서점 사이트에서 찾아보려 했으나 카테고리 자체를 페이지로 쓰는 경우가 많이 없었습니다. 카테고리 자체를 하나의 페이지로 쓰는 게 뭐가 있을까 하다가, 평소에 자주 사용하는 스포티파이를 보니, 음악의 장르를 카테고리로 해서 하나의 페이지를 구성했더라구요. UI가 맘에 들어서 참고했습니다. 해당 UI에서는 앨범 자켓 이미지가 필요했는데, 이미지를 대체하기 위해 이모지를 대신 사용했습니다. 소스코드의 `./src/lib/constants/index.ts`에서 확인하실 수 있습니다.
+
+3. 카테고리의 책 목록 페이지:  일본 잡지 사이트인 매거진 월드 사이트의 잡지 섹션을 참고했습니다. 챌린지의 요구사항과 가장 잘 어울리는 UI라고 판단하여 참고했습니다. 책 리스트에 마우스를 호버하면 빨간 테두리가 생기는 애니메이션을 참고했는데요. 소스코드의 `./src/app/list/[listName]/page.module.css`파일에서 확인하실 수 있습니다. 
+
+4. 컴포넌트 정리: 스타일링을 하다보니 모든 페이지에 중복되는 코드들이 생기기 시작하더라구요. 각 페이지마다 중복되는 요소들을 layout.tsx로 옮겨서 코드의 중복을 줄이려고 노력했습니다. 
+
+## 고민했던 부분
+
+1. 컴포넌트 분리
+아래 코드는 (home)의 page.tsx와 components 폴더의 bestsellerList.tsx 파일입니다. page.tsx에서 map으로 반복되는 부분을 `BestsellerList`라는 컴포넌트로 분리하긴 했는데, 분리하는 당시에도 '이정도 코드의 양을 굳이 분리해서 뎁스를 늘리는게 맞는 걸까?'라는 고민을 많이 했습니다. 
+
+- page.tsx는 어떤 UI들이 렌더링되고 있는지 대강 파악할 수 있는게 좋으니, 자세한 구현은 컴포넌트로 분리하는 것이 맞을까?
+- 길지 않은 코드라면 굳이 분리하여 여러 파일을 왔다갔다 하는 것보다 page.tsx에 작성하는 것이 더 좋을까?
+
+여러분의 생각은 어떠신지 궁금합니다.
+
+```tsx
+// .src/app/(home)/page.tsx
+<section>
+  <h1 className={styles['section-title']}>모두 둘러보기</h1>
+  <ul className={styles['lists-container']}>
+    {results.map((list: List) => (
+      <BestsellerList
+        list={list}
+        key={list.list_name_encoded}
+      ></BestsellerList>
+    ))}
+  </ul>
+</section>
+```
+```tsx
+// ./src/components/bestsellerList.tsx
+export default function BestsellerList({ list }: { list: List }) {
+  return (
+    <li className={styles['list-container']}>
+      {/* 글자수 제한 때문에 생략했습니다 */}
+    </li>
+  );
+}
+```
